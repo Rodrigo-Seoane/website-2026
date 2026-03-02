@@ -1,0 +1,42 @@
+ID,Task,Section,Details,Effort,Hours,Status,Priority,Deadline,Schedule
+H-01,Hero Cover,Home,Update hero cover image/visual for homepage,S,1,To Do,High,2026-02-17,Day 1
+H-02,Hero Button Interactions,Home,Implement hover/click micro-interactions on hero CTA buttons,S,1,To Do,High,2026-02-17,Day 1
+H-03,Pitfalls Background Color,Home,Update background color for Pitfalls section,XS,0.5,To Do,Medium,2026-02-18,Day 2
+H-04,Pitfalls Blurbs Design,Home,Redesign blurb cards layout and content for Pitfalls section,M,2,To Do,Medium,2026-02-18,Day 2
+H-05,Pitfalls Icons Set,Home,"Provide/create icons at 64px, 48px, 32px, 24px sizes for Pitfalls blurbs",M,2,To Do,Medium,2026-02-19,Day 3
+H-06,Competitive Advantage Image Banner,Home,Design and implement the competitive advantage image banner section,M,2,To Do,High,2026-02-19,Day 3
+H-07,Featured Work Case Icons,Home,Add/update icons for each featured case study card,S,1,To Do,Medium,2026-02-20,Day 4
+H-08,Featured Work Impact Values,Home,Provide and display impact metric values for each case study,S,1.5,To Do,High,2026-02-20,Day 4
+H-09,Pricing Background Colors,Home,Update background colors for pricing section cards/tiers,XS,0.5,To Do,Low,2026-02-21,Day 5
+H-10,Clients Logo Sizes,Home,Update client logo sizes for consistency and visual balance,XS,0.5,To Do,Low,2026-02-21,Day 5
+FW-01,Cases Grid Hero Background,Featured Work,Update background cover image/color for /work hero,S,1,To Do,High,2026-02-21,Day 5
+FW-02,Remove Grid Layout,Featured Work,Remove current grid layout from cases listing,S,1,To Do,High,2026-02-22,Day 6
+FW-03,Case Section Block Template,Featured Work,Design and implement new case section block template to replace grid cards,L,3,To Do,High,2026-02-23,Day 6-7
+CS-01,Redesign Case Hero,Cases Template,Redesign case study hero section — update content structure and layout,L,3,To Do,High,2026-02-25,Day 8-9
+CS-02,Case Hero Cover Image Ratio,Cases Template,Adapt cover image to match new size ratio for case hero,S,1,To Do,High,2026-02-25,Day 9
+CS-03,Meta Details Cards,Cases Template,Build details cards component (Role / Timeline / Tools),M,2,To Do,High,2026-02-26,Day 10
+CS-04,Up Next Block Template,Cases Template,Design and build 'Next Case' block template for case study footer,M,2,To Do,Medium,2026-02-27,Day 11
+IN-01,Insights Hero Background,Insights,Replace hero background color for Insights page,XS,0.5,To Do,Medium,2026-02-27,Day 11
+IN-02,Refine Article Cards,Insights,"Polish article card design — typography, spacing, hover states",M,2,To Do,Medium,2026-02-28,Day 12
+IN-03,Add Article Filters,Insights,Implement category filter bar for articles grid,M,2,To Do,Medium,2026-03-01,Day 13
+IN-04,Bento Grid Layout,Insights,Implement bento grid layout for articles display,M,2,To Do,Medium,2026-03-01,Day 13
+AB-01,Profile Section Redesign,About Me,Redesign profile section to match new content and layout direction,M,2,To Do,Medium,2026-03-02,Day 14
+AB-02,Profile Image Sizes,About Me,Update profile image sizes for responsive display,XS,0.5,To Do,Low,2026-03-02,Day 14
+VL-01,Vibe Lab Hero Background,Vibe Lab,Update background color for Vibe Lab hero section,XS,0.5,To Do,Low,2026-03-03,Day 15
+VL-02,Review Case Card Template,Vibe Lab,Review and refine experiment case card template,S,1,To Do,Low,2026-03-03,Day 15
+VL-03,Redesign Message Block,Vibe Lab,Redesign 'Next Updates' message block for Vibe Lab,S,1.5,To Do,Low,2026-03-04,Day 16
+LM-01,Lead Magnet Finish Dev,Lead Magnet,Complete remaining development for UX Pulse Check lead magnet,L,4,To Do,Critical,2026-03-05,Day 16-17
+LM-02,Lead Magnet Test Backend + Frontend,Lead Magnet,End-to-end testing of backend API and frontend flow,M,2,To Do,Critical,2026-03-06,Day 18
+LM-03,Lead Magnet QA,Lead Magnet,"Full QA pass — edge cases, mobile, error states, email delivery",S,1.5,To Do,Critical,2026-03-06,Day 18
+EM-01,Email Sequence Content,Email Templates,Write content for all 5 emails in the UX Pulse Check nurture sequence,L,4,To Do,Critical,2026-03-08,Day 19-20
+EM-02,Email Template Design,Email Templates,Design responsive email template matching brand identity,M,2,To Do,Critical,2026-03-09,Day 21
+EM-03,Email Template Implementation,Email Templates,"Code email templates in HTML — responsive, cross-client compatible",M,3,To Do,Critical,2026-03-10,Day 22
+EM-04,Email Templates QA,Email Templates,"Test emails across clients (Gmail, Outlook, Apple Mail), verify automation triggers",M,2,To Do,Critical,2026-03-11,Day 23
+TD-01,Cross-Browser Testing,Testing & Deploy,"Test on Chrome, Firefox, Safari, Edge (desktop + mobile)",M,2,To Do,Critical,2026-03-12,Day 24
+TD-02,Accessibility Audit,Testing & Deploy,"Keyboard nav, focus states, alt text, heading hierarchy, ARIA, contrast",M,2,To Do,High,2026-03-13,Day 25
+TD-03,SEO Implementation,Testing & Deploy,"Metadata, OG tags, structured data, sitemap, robots.txt for all pages",M,2,To Do,High,2026-03-13,Day 25
+TD-04,Analytics & Conversion Tracking,Testing & Deploy,"GA4 events: job_inquiry, form_submission, call_booked, case_study_viewed, article_read",M,2,To Do,High,2026-03-14,Day 26
+TD-05,Performance Optimization,Testing & Deploy,"Lighthouse ≥95, LCP <2.5s, CLS <0.1, bundle analysis, lazy loading",M,2,To Do,High,2026-03-14,Day 26
+TD-06,Vercel Deployment,Testing & Deploy,"Deploy to Vercel, configure build settings, preview test",S,1,To Do,Critical,2026-03-15,Day 27
+TD-07,DNS Migration,Testing & Deploy,"Migrate DNS from IONOS to Vercel, configure SSL, verify propagation",S,1,To Do,Critical,2026-03-15,Day 27
+TD-08,Launch Day Checklist,Testing & Deploy,"Final verification: all links, forms, analytics, mobile, social cards, announce",S,1.5,To Do,Critical,2026-03-16,Day 28

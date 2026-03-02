@@ -1,0 +1,7 @@
+export { AboutHero } from './AboutHero'
+export { StorySection } from './StorySection'
+export { PhilosophySection } from './PhilosophySection'
+export { SkillsSection } from './SkillsSection'
+export { ToolsSection } from './ToolsSection'
+export { PersonalSection } from './PersonalSection'
+export { AboutCTA } from './AboutCTA'

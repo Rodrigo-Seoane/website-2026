@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Design System Configuration - Based on Figma */
+@theme inline {
+  /* Primary Colors */
+  --color-primary: #ffd115;
+  --color-primary-yellow: #ffd115;
+
+  /* Accent Colors */
+  --color-accent: #5C3D2E;
+  --color-accent-brown: #5C3D2E;
+  --color-accent-peach: #FFAD84;
+  --color-orange-400: #ef8c48;
+  --color-orange-900: #421e06;
+
+  /* Cream/Light Backgrounds */
+  --color-cream-100: #fff9f0;
+  --color-cream-500: #fff9f0;
+
+  /* Dark Colors */
+  --color-dark-50: #f7f7f7;
+  --color-dark-150: #c7c8c6;
+  --color-dark-500: #686b63;
+  --color-dark-700: #2e5e5e;
+  --color-dark-900: #080d00;
+  --color-dark-background: #0A0A0A;
+  --color-dark-surface: #141414;
+  --color-dark-border: #262626;
+
+  /* Fonts */
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Custom Font Sizes */
+  --font-size-7xl: 4.5rem;
+  --font-size-8xl: 6rem;
+
+  /* Custom Timing Functions */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Custom Animations */
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Base Styles */
+:root {
+  --background: #FAFAFA;
+  --foreground: #171717;
+}
+
+.dark {
+  --background: #0A0A0A;
+  --foreground: #FAFAFA;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

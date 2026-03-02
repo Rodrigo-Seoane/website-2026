@@ -1,0 +1,6 @@
+export { Hero } from './Hero'
+export { FeaturedWork } from './FeaturedWork'
+export { Services } from './Services'
+export { ClientLogos } from './ClientLogos'
+export { Testimonials } from './Testimonials'
+export { ContactForm } from './ContactForm'
