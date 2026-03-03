@@ -11,6 +11,8 @@ import {
 } from '@/components/sections/case-study'
 import { CaseStudySolutionContent } from '@/components/sections/case-study/CaseStudySolutionContent'
 import { CaseStudyProblemContent } from '@/components/sections/case-study/CaseStudyProblemContent'
+import { ContextObjectives } from '@/components/sections/case-study/ContextObjectives'
+import { KeyDeliverables } from '@/components/sections/case-study/KeyDeliverables'
 
 // --- Route generation & metadata ----------------------------------------
 
@@ -60,6 +62,8 @@ export default async function CaseStudyPage({ params }: Props) {
     <>
       <ProgressBar />
       <CaseStudyHero caseStudy={caseStudy} />
+      <ContextObjectives caseStudy={caseStudy} />
+      <KeyDeliverables caseStudy={caseStudy} />
       <CaseStudyOverview caseStudy={caseStudy} />
 
       <CaseStudySection title="The Challenge" id="problem" background="white">

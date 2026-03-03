@@ -17,6 +17,18 @@
   --color-cream-100: #fff9f0;
   --color-cream-500: #fff9f0;
 
+  /* Surface Colors */
+  --color-surface-primary: #ffd115;         /* Yellow — hero & section backgrounds */
+  --color-surface-quaternary: #fffae8;      /* Warm cream — testimonial card background */
+
+  /* Border Colors */
+  --color-border-accent: #665408;           /* Gold/brown — hero image border */
+
+  /* Content Colors */
+  --color-content-active-primary: #1a1502;  /* Near-black — primary text */
+  --color-content-active-secondary: #f7f7f7; /* Off-white — light text on dark badges */
+  --color-content-disable-primary: #686b63; /* Muted grey — service badge backgrounds */
+
   /* Dark Colors */
   --color-dark-50: #f7f7f7;
   --color-dark-150: #c7c8c6;

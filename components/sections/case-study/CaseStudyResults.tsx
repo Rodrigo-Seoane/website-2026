@@ -57,30 +57,6 @@ export function CaseStudyResults({ caseStudy }: CaseStudyResultsProps) {
           ))}
         </motion.div>
 
-        {/* Testimonial -- conditional */}
-        {results.testimonial && (
-          <motion.div
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            variants={fadeUp}
-            className="mb-10 max-w-2xl"
-          >
-            <blockquote className="border-l-4 border-orange-400 pl-6">
-              <p className="text-lg text-dark-900 italic leading-relaxed">
-                &ldquo;{results.testimonial.quote}&rdquo;
-              </p>
-              <footer className="mt-3">
-                <cite className="font-semibold text-dark-900 not-italic">
-                  {results.testimonial.author}
-                </cite>
-                <span className="text-dark-500 text-sm ml-2">
-                  {results.testimonial.role}
-                </span>
-              </footer>
-            </blockquote>
-          </motion.div>
-        )}
-
         {/* Business impact statement */}
         <motion.p
           initial="hidden"

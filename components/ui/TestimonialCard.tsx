@@ -9,25 +9,17 @@ interface TestimonialCardProps {
 }
 
 export function TestimonialCard({ testimonial, className }: TestimonialCardProps) {
-  // Generate initials from author name for avatar fallback
-  const initials = testimonial.author
-    .split(' ')
-    .map(name => name.charAt(0))
-    .join('')
-    .toUpperCase()
-    .slice(0, 2)
-
   return (
     <div
       className={cn(
         'bg-surface-quaternary border-4 border-border-accent rounded-lg p-5',
         'shadow-[0px_4px_16px_0px_rgba(130,130,130,0.15)]',
-        'flex flex-col gap-6',
+        'flex flex-col gap-4',
         className
       )}
     >
       {/* Quote Icon */}
-      <div className="relative w-8 h-6">
+      <div className="w-8 h-[23px] flex-shrink-0">
         <svg
           viewBox="0 0 32 23"
           fill="none"
@@ -44,31 +36,36 @@ export function TestimonialCard({ testimonial, className }: TestimonialCardProps
       </div>
 
       {/* Quote Body */}
-      <blockquote className="flex flex-col gap-4">
+      <blockquote>
         <p className="font-body text-[16px] leading-[1.32] text-content-active-primary">
           {testimonial.quote}
         </p>
       </blockquote>
 
       {/* Author Info */}
-      <div className="flex gap-4 items-start">
-        {/* Avatar with Initials Fallback */}
+      <div className="flex gap-4 items-center">
+        {/* Avatar Placeholder */}
         <div
-          className="w-12 h-12 rounded-full bg-gradient-to-br from-surface-primary to-accent-primary flex items-center justify-center shrink-0"
+          className="w-12 h-12 rounded-full bg-gradient-to-br from-surface-primary to-surface-quaternary flex items-center justify-center shrink-0 overflow-hidden"
           aria-hidden="true"
         >
           <span className="font-display font-bold text-[14px] text-content-active-primary">
-            {initials}
+            {testimonial.author
+              .split(' ')
+              .map((n) => n.charAt(0))
+              .join('')
+              .toUpperCase()
+              .slice(0, 2)}
           </span>
         </div>
 
         {/* Name and Role */}
-        <div className="flex flex-col gap-1">
-          <p className="font-body font-medium text-[12px] leading-[1.2] tracking-[0.48px] uppercase text-content-active-primary">
-            {testimonial.role}
-          </p>
-          <p className="font-body font-semibold text-[18px] leading-[1.32] text-content-active-primary">
+        <div className="flex flex-col gap-0.5">
+          <p className="font-body font-semibold text-[16px] leading-[1.32] text-content-active-primary">
             {testimonial.author}
+          </p>
+          <p className="font-body font-medium text-[12px] leading-[1.2] tracking-[0.48px] uppercase text-content-active-primary opacity-60">
+            {testimonial.role}
           </p>
         </div>
       </div>

@@ -32,7 +32,7 @@ export interface CaseStudyTestimonial {
 }
 
 export interface CaseStudy {
-  // --- Basic Info (existed before) ---
+  // --- Basic Info ---
   slug: string
   title: string
   client: string
@@ -44,15 +44,16 @@ export interface CaseStudy {
   metrics: CaseStudyMetric[]
   featured: boolean
   year: string
+  tagline?: string
 
-  // --- Extended Content (new fields) ---
+  // --- Extended Content ---
   heroImage: string
-  clientLogo?: string       // undefined when no logo asset exists
-  timeline: string          // e.g. "3 months"
-  role: string              // e.g. "Lead UX Designer"
-  tools: string[]           // e.g. ['Figma', 'Maze', 'Notion']
+  clientLogo?: string
+  timeline: string
+  role: string
+  tools: string[]
 
-  // --- Narrative Sections (new) ---
+  // --- Narrative Sections ---
   problem: {
     background: string
     painPoints: string[]
@@ -71,72 +72,73 @@ export interface CaseStudy {
     businessImpact: string
   }
 
-  // --- SEO (new) ---
+  // --- SEO ---
   metaDescription: string
   keywords: string[]
 }
 
 export const caseStudies: CaseStudy[] = [
+  // ─── 1. Atlas Onboarding ────────────────────────────────────────────────────
   {
     slug: 'atlas-onboarding',
-    title: 'Atlas Onboarding',
-    client: 'Atlas',
-    industry: 'SaaS',
-    thumbnail: '/images/Case Covers/Atlas Onboarding.png',
-    heroImage: '/images/Cases/Atlas Onboarding/Atlas Onboarding 01-min.png',
-    // clientLogo is omitted -- no Atlas logo asset on disk
+    title: 'Atlas Play Onboarding',
+    client: 'ATS Global',
+    industry: 'IIoT',
+    thumbnail: '/images/work/00. Case Covers/Atlas Onboarding.png',
+    heroImage: '/images/work/01. Atlas Onboarding/Atlas Onboarding 01-min.png',
+    tagline: 'Transforming User Adoption through Streamlined Onboarding',
     description:
-      'Redesigned the onboarding flow for an IIoT platform, increasing user adoption and improving sales conversion through strategic UX research and prototyping.',
+      "Redesigned Atlas Play's onboarding flow, raising the SUS score by 10.2 points and driving a 53% increase in low-friction sales conversions through role-based user paths.",
     services: ['UX Research', 'Prototyping', 'Onboarding Strategy'],
-    outcomes: ['Increased User Adoption', 'Improved Sales Conversion'],
+    outcomes: ['Improved SUS Score', 'Increased Sales Conversion', 'Reduced UI Debates'],
     metrics: [
-      { label: 'User Adoption', value: 47, suffix: '%', prefix: '+' },
-      { label: 'Sales Conversion', value: 32, suffix: '%', prefix: '+' },
-      { label: 'Onboarding Time', value: 40, suffix: '%', prefix: '-' },
+      { label: 'SUS Score Improvement', value: 10.2, prefix: '+', suffix: ' pts' },
+      { label: 'Sales Conversion', value: 53, prefix: '+', suffix: '%' },
+      { label: 'UI Consistency', value: 40, prefix: '-', suffix: '%' },
     ],
     featured: true,
-    year: '2024',
+    year: '2023',
     timeline: '3 months',
     role: 'Lead UX Designer',
     tools: ['Figma', 'Maze', 'Notion', 'Miro'],
 
     problem: {
       background:
-        'Atlas is an IIoT platform for industrial asset management serving mid-market and enterprise manufacturers. Despite a powerful product, new users consistently dropped off during the first 48 hours after signup, never reaching the core value of the platform.',
+        "Atlas faced significant challenges with user adoption due to a fragmented onboarding process. The platform's System Usability Scale (SUS) score was 42.6, below industry benchmarks, indicating poor user experience and limiting the sales team's ability to demonstrate value to enterprise prospects.",
       painPoints: [
-        'High drop-off rate during initial setup -- 62% of new users left before completing first configuration.',
-        'Users struggled to understand the value proposition without hands-on guidance.',
-        'Complex technical onboarding lacked progressive disclosure, overwhelming non-technical stakeholders.',
+        'Lack of role-based training paths left users without guidance tailored to their responsibilities.',
+        'Inadequate documentation and absence of visual form-building tools slowed configuration and setup.',
+        "Business analysts struggled to articulate the platform's value to clients without a structured, guided demo experience.",
       ],
       businessChallenge:
-        'The sales team was spending excessive time on post-signup demos to compensate for a broken self-serve onboarding experience, directly compressing margins on mid-market deals.',
+        "The sales team needed a frictionless way to demonstrate platform value to enterprise prospects during the sales cycle, while reducing post-sale onboarding support costs and improving the platform's measurable usability baseline.",
     },
 
     solution: {
       approach:
-        'We implemented a user-centered design process anchored in discovery interviews with 12 existing users and 8 prospects. Pain-point clustering revealed three distinct user personas with different setup priorities. This informed a modular, role-based onboarding architecture built on progressive disclosure.',
+        'We conducted a user-centric discovery phase with 16 user interviews across various skill levels. Pain-point clustering revealed the need for role-based onboarding paths and a more visual form-building experience, informing a redesigned architecture built around progressive disclosure and contextual guidance.',
       keyDecisions: [
-        'Progressive disclosure of features -- surface only the settings relevant to the user\'s role on first login.',
-        'Interactive product tours that trigger contextually, not on a fixed linear path.',
-        'Role-based onboarding paths: Administrator, Analyst, and Field Technician each see a tailored first-run experience.',
+        'Role-based onboarding paths — prospects and users immediately see platform value relevant to their specific role.',
+        'WYSIWYG form editor — a visual, drag-and-drop interface replacing the previous text-heavy configuration flow.',
+        '16-interview discovery phase ensuring every design decision, from IA to interaction patterns, was grounded in real user data.',
       ],
       images: [
         {
-          src: '/images/Cases/Atlas Onboarding/Atlas Onboarding 02-min.png',
-          alt: 'Wireframe explorations for Atlas onboarding flow',
-          caption: 'Initial wireframe explorations across the three role-based paths.',
+          src: '/images/work/01. Atlas Onboarding/Atlas Onboarding 02-min.png',
+          alt: 'Role-based onboarding flow wireframes',
+          caption: 'Wireframe explorations across the role-based onboarding paths.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/Atlas Onboarding/Atlas Onboarding 03-min.png',
-          alt: 'Redesigned user flow diagram',
-          caption: 'Redesigned user flow consolidating setup steps from 14 to 6.',
+          src: '/images/work/01. Atlas Onboarding/Atlas Onboarding 03-min.png',
+          alt: 'WYSIWYG form editor design',
+          caption: 'Visual form-building interface replacing the previous text-heavy configuration.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/Atlas Onboarding/Atlas Onboarding 04-min.png',
+          src: '/images/work/01. Atlas Onboarding/Atlas Onboarding 04-min.png',
           alt: 'High-fidelity prototype screens',
-          caption: 'High-fidelity prototype of the contextual tour system.',
+          caption: 'High-fidelity prototype of the contextual onboarding system.',
           aspectRatio: '16/9',
         },
       ],
@@ -144,40 +146,42 @@ export const caseStudies: CaseStudy[] = [
 
     results: {
       metrics: [
-        { label: 'User Adoption', value: 47, suffix: '%', prefix: '+' },
-        { label: 'Sales Conversion', value: 32, suffix: '%', prefix: '+' },
-        { label: 'Onboarding Time', value: 40, suffix: '%', prefix: '-' },
+        { label: 'SUS Score Improvement', value: 10.2, prefix: '+', suffix: ' pts' },
+        { label: 'Sales Conversion', value: 53, prefix: '+', suffix: '%' },
+        { label: 'UI Consistency', value: 40, prefix: '-', suffix: '%' },
       ],
       testimonial: {
         quote:
-          'The new onboarding reduced our support tickets by 60% in the first quarter. Our sales team finally stopped acting as a training department.',
-        author: 'Sarah Chen',
-        role: 'VP of Product, Atlas',
+          'With the dynamic role-based onboarding paths prospects can see the value immediately and it had direct impact on sales conversions with enterprise clients.',
+        author: 'Paul Oostindie',
+        role: 'Sales Manager',
       },
       businessImpact:
-        'The redesigned onboarding contributed to a 28% increase in annual recurring revenue by reducing churn in the critical first-30-days window and freeing the sales team to focus on new pipeline.',
+        "The redesigned onboarding raised the platform's SUS score by 10.2 points and drove a 53% increase in low-friction sales conversions post-launch, directly shortening the enterprise sales cycle and reducing onboarding support overhead.",
     },
 
     metaDescription:
-      'UX case study: How I increased user adoption by 47% for Atlas IIoT platform through strategic role-based onboarding redesign.',
-    keywords: ['UX case study', 'onboarding design', 'IIoT', 'SaaS', 'user adoption'],
+      "UX case study: How role-based onboarding redesign raised Atlas Play's SUS score by 10.2 points and increased enterprise sales conversions by 53%.",
+    keywords: ['UX case study', 'onboarding design', 'IIoT', 'SaaS', 'user adoption', 'SUS score'],
   },
+
+  // ─── 2. BennitAI Marketplace ────────────────────────────────────────────────
   {
     slug: 'bennitai-marketplace',
-    title: 'BennitAI Marketplace',
+    title: 'Bennit AI Marketplace',
     client: 'BennitAI',
     industry: 'Marketplace',
-    thumbnail: '/images/Case Covers/Bennit AI.png',
-    heroImage: '/images/Cases/BennitAI/Bennit AI 01-min.png',
+    thumbnail: '/images/work/00. Case Covers/Bennit AI.png',
+    heroImage: '/images/work/04. BennitAI/Bennit AI 01-min.png',
     clientLogo: '/images/Client Logos/Client Name=BennitAI.png',
+    tagline: 'Bridging the IIoT Talent Gap with AI-Driven Design',
     description:
-      'Designed an AI-driven marketplace platform that reduced onboarding friction and increased community engagement through intelligent matching and seamless user experiences.',
+      'Designed a two-sided AI-powered IIoT talent marketplace connecting Seekers and Solvers, driving a 23% community membership surge and 200+ project opportunities in the first month.',
     services: ['AI Integration', 'Platform Design', 'Onboarding Strategy'],
-    outcomes: ['Reduced Onboarding Friction', 'Increased Community Engagement'],
+    outcomes: ['Community Membership Growth', 'Marketplace Launch'],
     metrics: [
-      { label: 'Onboarding Friction', value: 58, suffix: '%', prefix: '-' },
-      { label: 'Community Engagement', value: 73, suffix: '%', prefix: '+' },
-      { label: 'User Retention', value: 41, suffix: '%', prefix: '+' },
+      { label: 'Community Membership', value: 23, prefix: '+', suffix: '%' },
+      { label: 'Opportunities Created', value: 200, suffix: '+' },
     ],
     featured: true,
     year: '2024',
@@ -187,41 +191,41 @@ export const caseStudies: CaseStudy[] = [
 
     problem: {
       background:
-        'BennitAI is an AI-powered marketplace connecting freelance professionals with curated project opportunities. The platform had strong AI matching technology but a fragmented user experience that undermined trust and conversion at every stage of the funnel.',
+        "The Industrial Internet of Things (IIoT) sector faced a critical talent shortage, with companies struggling to find skilled professionals for niche projects. BennitAI's existing corporate network lacked scalability, resulting in low engagement and fragmented collaboration that prevented the platform from growing.",
       painPoints: [
-        'New users abandoned the platform within 72 hours -- the marketplace felt opaque and impersonal.',
-        'The AI matching engine produced excellent results, but users had no visibility into why a match was recommended.',
-        'Community features existed in isolation, disconnected from the core marketplace workflow.',
+        'Companies with IIoT project demands could not efficiently find and vet niche specialists at speed.',
+        'The existing network lacked AI-driven intelligence to match Seekers and Solvers based on project requirements.',
+        'Fragmented collaboration tools prevented the community from scaling beyond its initial user base.',
       ],
       businessChallenge:
-        'Investor pressure to hit a monthly active user target required doubling retention without increasing acquisition spend. The product needed to earn trust faster.',
+        'Design a two-sided marketplace connecting Seekers (companies with project demands) and Solvers (skilled professionals) while reducing onboarding friction and enabling AI-powered talent matching at scale.',
     },
 
     solution: {
       approach:
-        'The engagement strategy was built on a single principle: make the AI visible. Rather than hiding the matching logic, we surfaced confidence scores and reasoning snippets alongside every recommendation. A parallel workstream unified the community layer into the marketplace feed itself.',
+        'The solution centred on a transparent, AI-powered Seeker-Solver exchange. We conducted ecosystem mapping to understand both sides of the marketplace, then designed an AI matching layer that recommends talent based on project DNA, making the matching rationale visible to both parties.',
       keyDecisions: [
-        'Transparent AI -- show match confidence percentage and a one-line explanation for every recommendation.',
-        'Unified feed merging marketplace opportunities and community activity into a single, algorithmically ranked stream.',
-        'Onboarding gamification -- a lightweight "profile health" score that guides new users toward complete, high-match profiles.',
+        'Seeker-Solver two-sided marketplace architecture — distinct, optimised onboarding flows for each user type.',
+        'AI-powered matching surfacing talent recommendations based on project DNA and verified skill alignment.',
+        'Design system adaptation ensuring a consistent, trustworthy UI across all marketplace touchpoints.',
       ],
       images: [
         {
-          src: '/images/Cases/BennitAI/Bennit AI 02-min.png',
-          alt: 'Unified marketplace feed design',
-          caption: 'The unified feed merging opportunities and community signals.',
+          src: '/images/work/04. BennitAI/Bennit AI 02-min.png',
+          alt: 'Seeker-Solver marketplace ecosystem map',
+          caption: 'Ecosystem map defining the two-sided marketplace architecture.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/BennitAI/Bennit AI 03-min.png',
-          alt: 'AI transparency card component',
-          caption: 'Match card showing confidence score and reasoning.',
+          src: '/images/work/04. BennitAI/Bennit AI 03-min.png',
+          alt: 'AI matching interface design',
+          caption: 'AI match card showing talent recommendations and project DNA alignment.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/BennitAI/Bennit AI 04-min.png',
-          alt: 'Profile health onboarding flow',
-          caption: 'Profile health gamification guiding new users to completion.',
+          src: '/images/work/04. BennitAI/Bennit AI 04-min.png',
+          alt: 'Marketplace onboarding flow',
+          caption: 'Distinct onboarding flows for Seekers and Solvers, optimised for each user type.',
           aspectRatio: '16/9',
         },
       ],
@@ -229,40 +233,41 @@ export const caseStudies: CaseStudy[] = [
 
     results: {
       metrics: [
-        { label: 'Onboarding Friction', value: 58, suffix: '%', prefix: '-' },
-        { label: 'Community Engagement', value: 73, suffix: '%', prefix: '+' },
-        { label: 'User Retention', value: 41, suffix: '%', prefix: '+' },
+        { label: 'Community Membership', value: 23, prefix: '+', suffix: '%' },
+        { label: 'Opportunities Created', value: 200, suffix: '+' },
       ],
       testimonial: {
         quote:
-          'Rodrigo translated our AI capabilities into something users actually trust. Retention metrics moved faster than any other initiative on the roadmap.',
-        author: 'Marcus Reid',
-        role: 'Co-founder & CTO, BennitAI',
+          "The IIoT talent crisis is paralyzing our industry. BennitAI's community exists to help companies find niche experts, and our fragmented network couldn't scale. We needed an AI-driven intelligence to connect 'Seekers' and 'Solvers' at speed. Rodrigo was brilliant to conceptualise and design the Seeker-Solver exchange presented at CSIA, which transformed an industry block into fluidity. A system enabling AI matching that recommends talent based on project DNA. The results spoke instantly.",
+        author: 'Katherine Cahalane',
+        role: 'CEO, BennitAI',
       },
       businessImpact:
-        'The redesigned platform exceeded the monthly active user target two months ahead of schedule, directly enabling a Series A extension round.',
+        "The Seeker-Solver exchange drove a 23% surge in community membership within three months of launch and generated 200+ project opportunities in the first month, validating the platform's ability to connect IIoT talent at speed and scale.",
     },
 
     metaDescription:
-      'UX case study: Redesigning BennitAI marketplace to reduce onboarding friction by 58% and grow community engagement by 73% through transparent AI design.',
-    keywords: ['UX case study', 'AI marketplace', 'platform design', 'community engagement'],
+      "UX case study: Designing BennitAI's two-sided IIoT talent marketplace with AI-powered matching, achieving 23% community growth and 200+ opportunities in month one.",
+    keywords: ['UX case study', 'AI marketplace', 'IIoT', 'talent platform', 'two-sided marketplace'],
   },
+
+  // ─── 3. Di Blasi Franchise ──────────────────────────────────────────────────
   {
     slug: 'diblasi-franchise',
     title: 'Di Blasi Franchise Expansion',
     client: 'Di Blasi',
     industry: 'Food Service',
-    thumbnail: '/images/Case Covers/DiBlasi Cover.png',
-    heroImage: '/images/Cases/Di Blasi/Di Blasi 01-min.png',
+    thumbnail: '/images/work/00. Case Covers/DiBlasi Cover.png',
+    heroImage: '/images/work/05. Di Blasi/Di Blasi 01-min.png',
     clientLogo: '/images/Client Logos/Client Name=Diblasi.png',
+    tagline: 'UX-Driven National Expansion through Targeted Onboarding',
     description:
-      'Redesigned the franchise landing page and implemented role-based onboarding, improving lead quality and reducing customer acquisition costs.',
+      'Redesigned the franchise acquisition funnel with separate journeys for distinct traffic sources, improving lead qualification by 40% and reducing Customer Acquisition Cost by 25%.',
     services: ['UX Research', 'Landing Page Design', 'Role-Based Onboarding'],
     outcomes: ['Improved Lead Quality', 'Reduced CAC'],
     metrics: [
-      { label: 'Lead Quality', value: 62, suffix: '%', prefix: '+' },
-      { label: 'CAC Reduction', value: 35, suffix: '%', prefix: '-' },
-      { label: 'Conversion Rate', value: 28, suffix: '%', prefix: '+' },
+      { label: 'Lead Qualification', value: 40, prefix: '+', suffix: '%' },
+      { label: 'CAC Reduction', value: 25, prefix: '-', suffix: '%' },
     ],
     featured: true,
     year: '2023',
@@ -272,41 +277,41 @@ export const caseStudies: CaseStudy[] = [
 
     problem: {
       background:
-        'Di Blasi is a fast-casual Italian food brand with 12 locations across Spain, seeking to accelerate franchise expansion. Their existing landing page was a generic template that failed to communicate the brand\'s operational excellence or the franchise opportunity\'s economics.',
+        'Di Blasi, a leading pizza franchise, faced stagnation after saturating the Rio de Janeiro market. Their outdated sales landing page suffered from 50% unqualified leads, inconsistent branding, and a mismatch between their iFood rating and franchisee expectations. The goal was to enable national expansion by reducing Customer Acquisition Cost and boosting lead quality.',
       painPoints: [
-        'The franchise inquiry form had a 4% conversion rate -- well below the 8-12% industry benchmark.',
-        'Prospective franchisees reported feeling uninformed about investment ranges and support structures.',
-        'No mechanism existed to qualify leads before they entered the sales funnel, wasting sales-team hours.',
+        '50% of leads were unqualified, wasting sales-team time and compressing margins on every franchise inquiry.',
+        'Inconsistent branding across touchpoints undermined the premium perception needed to attract serious franchisee candidates.',
+        'No mechanism to differentiate awareness-stage visitors (Facebook Ads) from high-intent prospects (Google Ads) in a single funnel.',
       ],
       businessChallenge:
-        'Di Blasi needed to double qualified franchise inquiries without increasing paid acquisition spend, and reduce the sales cycle by pre-qualifying prospects digitally.',
+        'Di Blasi needed to double qualified franchise inquiries without increasing paid acquisition spend, and reduce the sales cycle by pre-qualifying prospects digitally through separate, intent-matched user journeys.',
     },
 
     solution: {
       approach:
-        'The redesign was driven by 6 interviews with existing franchisees and a competitor audit of 8 franchise landing pages. The core insight: high-intent prospects want to self-qualify. We built a page architecture that guides visitors through financial and lifestyle fit before asking them to fill a form.',
+        "Traffic source analysis identified two primary entry points requiring distinct conversion paths: Facebook Ads for awareness-stage explorers and Google Ads for conversion-ready investors. We applied Nielsen's heuristics to the redesign, uncovering opportunities for role-based CTAs, jargon-free content, ROI calculators, and deliberate social proof sequencing.",
       keyDecisions: [
-        'Investment calculator -- an interactive tool letting prospects model their expected returns before committing to an inquiry.',
-        'Social proof sequencing -- testimonials and unit economics placed at deliberate scroll points to build confidence progressively.',
-        'Two-tier CTA architecture -- a low-commitment "Learn More" path and a high-commitment "Apply Now" path, each with distinct qualification flows.',
+        "Separate conversion funnels for Facebook explorers and Google investors — each path tailored to the visitor's intent and readiness.",
+        'Modular design system across franchisee portals ensuring brand cohesion and reducing long-term design and dev debt.',
+        'Simplified forms with error prevention techniques (auto-formatting phone numbers) to reduce lead capture abandonment.',
       ],
       images: [
         {
-          src: '/images/Cases/Di Blasi/Di Blasi 02-min.png',
-          alt: 'Landing page wireframes',
-          caption: 'Wireframe showing the progressive disclosure page structure.',
+          src: '/images/work/05. Di Blasi/Di Blasi 02-min.png',
+          alt: 'Franchise landing page wireframes',
+          caption: 'Progressive disclosure page structure showing the two distinct conversion paths.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/Di Blasi/Di Blasi 03-min.png',
-          alt: 'Investment calculator design',
-          caption: 'The interactive ROI calculator -- the highest-engagement element on the page.',
+          src: '/images/work/05. Di Blasi/Di Blasi 03-min.png',
+          alt: 'Role-based CTA and form design',
+          caption: 'Separate CTA flows for exploration vs. investment-ready visitors.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/Di Blasi/Di Blasi 04-min.png',
-          alt: 'Final landing page design',
-          caption: 'Production design of the franchise landing page.',
+          src: '/images/work/05. Di Blasi/Di Blasi 04-min.png',
+          alt: 'Final franchise landing page design',
+          caption: 'Production design of the franchise acquisition landing page.',
           aspectRatio: '16/9',
         },
       ],
@@ -314,84 +319,84 @@ export const caseStudies: CaseStudy[] = [
 
     results: {
       metrics: [
-        { label: 'Lead Quality', value: 62, suffix: '%', prefix: '+' },
-        { label: 'CAC Reduction', value: 35, suffix: '%', prefix: '-' },
-        { label: 'Conversion Rate', value: 28, suffix: '%', prefix: '+' },
+        { label: 'Lead Qualification', value: 40, prefix: '+', suffix: '%' },
+        { label: 'CAC Reduction', value: 25, prefix: '-', suffix: '%' },
       ],
       testimonial: {
         quote:
-          'We went from chasing cold leads to receiving applications from people who already understood the business. The calculator alone justified the investment.',
-        author: 'Elena Morales',
-        role: 'Head of Franchise Development, Di Blasi',
+          'I needed someone who understood both pizza and people. Rodrigo worked his magic! Created separate journeys for Facebook explorers vs Google-ready investors.',
+        author: 'Arnaldo Di Blasi',
+        role: 'Founder, Di Blasi',
       },
       businessImpact:
-        'The new page drove a 28% uplift in form submissions while simultaneously improving lead quality by 62%, measured by sales-team qualification rate. Two new franchise agreements were signed within the first quarter.',
+        "The redesigned franchise funnel drove a 40% improvement in lead qualification within three months of launch and a 25% reduction in Customer Acquisition Cost, enabling Di Blasi's national expansion strategy.",
     },
 
     metaDescription:
-      'UX case study: How a franchise landing page redesign improved lead quality by 62% and reduced customer acquisition costs by 35% for Di Blasi.',
-    keywords: ['UX case study', 'landing page design', 'franchise', 'food service', 'conversion optimization'],
+      "UX case study: Redesigning Di Blasi's franchise acquisition funnel with intent-based user journeys to improve lead quality by 40% and reduce CAC by 25%.",
+    keywords: ['UX case study', 'landing page design', 'franchise', 'food service', 'conversion optimization', 'CAC reduction'],
   },
+
+  // ─── 4. AXA GO Agent's Coach ────────────────────────────────────────────────
   {
     slug: 'axa-go-agents-coach',
-    title: "AXA GO Agent's Coach Initiative",
-    client: 'AXA',
+    title: "AXA GO Agent's Coach",
+    client: 'AXA Group Operations',
     industry: 'Insurance',
-    thumbnail: '/images/Case Covers/Customer Simulator.png',
-    heroImage: '/images/Cases/Axa Go/AXA Go 01-min.png',
+    thumbnail: '/images/work/00. Case Covers/Customer Simulator.png',
+    heroImage: '/images/work/03. Axa Go/AXA Go 01-min.png',
     clientLogo: '/images/Client Logos/Client Name=Axa.png',
+    tagline: 'AI-Driven Training to Improve Onboarding and Retention',
     description:
-      'Developed an AI-driven training platform for insurance agents, enhancing retention and improving training efficiency through personalized coaching experiences.',
-    services: ['AI-Driven Training', 'UX Design', 'Onboarding Strategy'],
-    outcomes: ['Enhanced Agent Retention', 'Improved Training Efficiency'],
+      'Designed an AI-driven training PoC for AXA Group Operations — a personalized course generator and customer simulator validated across five European entities, winning internal innovation recognition.',
+    services: ['AI-Driven Training', 'UX Design', 'Cross-Functional Collaboration'],
+    outcomes: ['AI PoC Validated', 'Innovation Award', 'Cross-Entity Research'],
     metrics: [
-      { label: 'Agent Retention', value: 44, suffix: '%', prefix: '+' },
-      { label: 'Training Efficiency', value: 56, suffix: '%', prefix: '+' },
-      { label: 'Time to Competency', value: 38, suffix: '%', prefix: '-' },
+      { label: 'Validated Feasibility', value: 43, suffix: '%' },
     ],
     featured: true,
     year: '2024',
     timeline: '5 months',
-    role: 'Senior UX Designer',
+    role: 'Product Designer',
     tools: ['Figma', 'Maze', 'Miro', 'Confluence'],
 
     problem: {
       background:
-        'AXA GO is the digital arm of AXA\'s insurance distribution network across Southern Europe. The company faced a structural challenge: new insurance agents churned at a 40% rate within the first six months, primarily because the existing training curriculum was static, classroom-based, and disconnected from day-to-day selling scenarios.',
+        'AXA faced unprecedented attrition rates among sales agents, compounded by inefficient knowledge transfer across its entities. Training methodologies were costly and often outdated due to constant changes in products, underwriting laws, and regulations. The goal was to create a Proof of Concept leveraging AI-driven tools to enhance onboarding, improve retention, and validate scalable solutions.',
       painPoints: [
-        'New agents took an average of 4 months to reach competency -- the industry benchmark is 8 weeks.',
-        'Training modules were generic and did not adapt to each agent\'s product mix or territory.',
-        'No feedback loop existed between training completion and on-the-job performance.',
+        'Sales representatives struggled with outdated training materials, leading to disengagement and high turnover.',
+        'Knowledge transfer was slow and inconsistent across five AXA entities (Germany, Spain, Italy, France, Switzerland).',
+        'No dynamic system existed to keep training materials current as products, regulations, and underwriting laws evolved.',
       ],
       businessChallenge:
-        'Each churned agent represented a significant recruitment and onboarding cost. AXA needed a training experience that kept agents engaged and productive from day one, without requiring a proportional increase in training-team headcount.',
+        'AXA needed a scalable, AI-driven training PoC demonstrating measurable improvement in onboarding efficiency and retention across multiple entities, without proportionally increasing training-team headcount.',
     },
 
     solution: {
       approach:
-        'We designed an AI-powered coaching platform that simulates real customer conversations. The system adapts scenario difficulty based on each agent\'s performance history and flags knowledge gaps before they become costly mistakes in the field.',
+        'We designed and validated a Proof of Concept across five AXA entities, collaborating with developers and AI specialists on technical feasibility. The solution centred on two AI-powered tools: a personalized course generator and a realistic customer conversation simulator.',
       keyDecisions: [
-        'Simulated customer conversations as the primary training modality -- agents learn by doing, not by reading.',
-        'Adaptive difficulty engine -- scenarios escalate in complexity as the agent demonstrates mastery, keeping engagement high.',
-        'Performance dashboard surfacing a personal "competency map" that ties training modules directly to sales outcomes.',
+        'AI Course Generator — personalized training materials (quizzes and tests) that adapt dynamically to individual agent learning paths.',
+        'Customer Simulator — a risk-free environment for agents to practise realistic customer interactions using AI-generated personas.',
+        'Cross-entity research spanning Germany, Spain, Italy, France, and Switzerland to capture diverse training needs and validate scalability.',
       ],
       images: [
         {
-          src: '/images/Cases/Axa Go/AXA Go 02-min.png',
+          src: '/images/work/03. Axa Go/AXA Go 02-min.png',
           alt: 'AI coaching conversation interface',
-          caption: 'The simulated customer conversation screen with real-time coaching hints.',
+          caption: 'The customer simulator interface for practising real-world sales conversations.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/Axa Go/AXA Go 03-min.png',
-          alt: 'Competency map dashboard',
-          caption: 'Agent competency map linking training progress to sales metrics.',
+          src: '/images/work/03. Axa Go/AXA Go 03-min.png',
+          alt: 'AI course generator dashboard',
+          caption: "Personalized course generator adapting training content to each agent's learning path.",
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/Axa Go/AXA Go 04-min.png',
-          alt: 'Adaptive scenario selection screen',
-          caption: 'Scenario picker showing difficulty progression and completion status.',
+          src: '/images/work/03. Axa Go/AXA Go 04-min.png',
+          alt: 'Cross-entity research synthesis',
+          caption: 'Research synthesis across five AXA entities informing the training PoC design.',
           aspectRatio: '16/9',
         },
       ],
@@ -399,40 +404,39 @@ export const caseStudies: CaseStudy[] = [
 
     results: {
       metrics: [
-        { label: 'Agent Retention', value: 44, suffix: '%', prefix: '+' },
-        { label: 'Training Efficiency', value: 56, suffix: '%', prefix: '+' },
-        { label: 'Time to Competency', value: 38, suffix: '%', prefix: '-' },
+        { label: 'Validated Feasibility', value: 43, suffix: '%' },
       ],
       testimonial: {
         quote:
-          'Our new agents are closing deals in week three now. The simulation-based training is the single biggest change we\'ve made to agent development in a decade.',
-        author: 'David Fernandez',
-        role: 'Head of Digital Training, AXA GO',
+          "Apart from his technical skills, Rodrigo is open minded, communicative and always available to help his colleagues, skills that make him an excellent match for any team. Working with him has been a valuable experience, I learnt from him lots of his expertise in UI following all the years he's been working as designer. I would absolutely collaborate with him again in the future if we have the opportunity. I highly recommend Rodrigo Seoane to any team looking for an experienced product designer.",
+        author: 'Pablo Fernandez Alvarez',
+        role: 'Lead Designer, AXA Group Operations',
       },
       businessImpact:
-        'Agent retention improved by 44% in the first cohort, and time-to-competency dropped from 4 months to 7 weeks. The platform is now being rolled out across all AXA GO territories.',
+        'The PoC won internal innovation recognition within AXA Group Operations and secured approval to advance to a live pilot with a specific entity — validating the scalability of AI-driven tools for agent training across the network.',
     },
 
     metaDescription:
-      'UX case study: Designing an AI-powered training platform for AXA insurance agents that reduced time-to-competency by 38% and improved retention by 44%.',
-    keywords: ['UX case study', 'AI training', 'insurance', 'agent coaching', 'platform design'],
+      'UX case study: Designing an AI training PoC for AXA Group Operations — a customer simulator and personalized course generator validated across five European entities.',
+    keywords: ['UX case study', 'AI training', 'insurance', 'agent coaching', 'proof of concept', 'AXA'],
   },
+
+  // ─── 5. Atlas Optimise ──────────────────────────────────────────────────────
   {
     slug: 'atlas-optimise',
-    title: 'Atlas Optimise',
-    client: 'Atlas',
+    title: 'Atlas Optimise®',
+    client: 'ATS Global',
     industry: 'SaaS',
-    thumbnail: '/images/Case Covers/Optimise.png',
-    heroImage: '/images/Cases/Atlas Optimise/Atlas Optimise 01-min.png',
-    // clientLogo is omitted -- no Atlas logo asset on disk
+    thumbnail: '/images/work/00. Case Covers/Optimise.png',
+    heroImage: '/images/work/02. Atlas Optimise/Atlas Optimise 01-min.png',
+    tagline: 'Scaling from 0 to 1 with User-Centric Design',
     description:
-      'Designed a resource management platform that increased enterprise customer retention and launched a successful B2B marketplace through cross-functional collaboration.',
+      "Designed role-based dashboards and a B2B resource marketplace for ATS Global's Atlas platform, increasing enterprise customer retention by 31% within six months.",
     services: ['UX Research', 'Platform Design', 'Cross-Functional Collaboration'],
-    outcomes: ['Increased Enterprise Customer Retention', 'Launched B2B Resource Marketplace'],
+    outcomes: ['Increased Enterprise Retention', 'B2B Marketplace Launch'],
     metrics: [
-      { label: 'Enterprise Retention', value: 51, suffix: '%', prefix: '+' },
-      { label: 'Platform Adoption', value: 67, suffix: '%', prefix: '+' },
-      { label: 'Resource Utilization', value: 43, suffix: '%', prefix: '+' },
+      { label: 'Enterprise Customer Retention', value: 31, prefix: '+', suffix: '%' },
+      { label: 'New Leads (B2B Marketplace)', value: 16, prefix: '+', suffix: '%' },
     ],
     featured: true,
     year: '2024',
@@ -442,41 +446,41 @@ export const caseStudies: CaseStudy[] = [
 
     problem: {
       background:
-        'Atlas Optimise is the resource management layer of the Atlas IIoT platform, targeting enterprise manufacturing clients with 500+ employees. Despite strong initial adoption, enterprise customers were under-utilizing the platform\'s capacity-planning features, leading to renewal conversations where the perceived ROI was too low.',
+        'Atlas needed to expand its iBPM platform into resource management, but faced challenges due to siloed stakeholders and early designs that alienated non-technical managers. The goal was to create a unified strategy that would enhance user engagement, align cross-functional teams, and unlock a new B2B marketplace revenue stream.',
       painPoints: [
-        'Only 30% of enterprise users were engaging with the capacity-planning module after onboarding.',
-        'No cross-company resource sharing existed, leaving idle capacity unmonetized.',
-        'The analytics dashboard was too granular for the executive stakeholders who made renewal decisions.',
+        'Siloed stakeholders across product, engineering, and executive functions prevented alignment on product direction.',
+        'Early designs prioritised operator complexity over manager usability, alienating the key decision-makers at renewal.',
+        'No role-based separation existed — managers and operators were served the same interface despite fundamentally different goals.',
       ],
       businessChallenge:
-        'Atlas needed to increase the perceived and actual ROI of the platform for enterprise clients to protect a key revenue segment and unlock a new B2B marketplace revenue stream.',
+        'Atlas needed to increase the perceived and actual ROI of the platform for enterprise clients to protect a critical revenue segment, while simultaneously launching a B2B resource marketplace to open a new revenue stream.',
     },
 
     solution: {
       approach:
-        'The solution had two tracks: simplifying the analytics layer for executive decision-makers, and building a resource marketplace that let enterprises trade idle capacity. Both tracks shared a single design principle -- surface value before surfacing complexity.',
+        'The solution ran on two tracks: simplifying the analytics and navigation layer for non-technical managers, and building a resource marketplace for enterprises to trade idle capacity. Both shared the principle of surfacing value before complexity. Cross-functional workshops aligned PMs, engineers, and executives before any design work began.',
       keyDecisions: [
-        'Executive summary dashboard as the landing view -- key ROI metrics in plain language, not raw data tables.',
-        'B2B resource marketplace with trust signals -- ratings, transaction history, and SLA guarantees built into the listing experience.',
-        'Guided capacity-planning workflow replacing the free-form interface with a step-by-step wizard that produces an actionable recommendation.',
+        'Cross-functional workshops with PMs, engineers, and executives to define personas and align on OKRs before any design began.',
+        'Role-based dashboards — managers see high-level ROI metrics and simplified navigation; operators retain the full feature set.',
+        'Scalable design system enabling consistent UI across all marketplace touchpoints and reducing design-engineering debate.',
       ],
       images: [
         {
-          src: '/images/Cases/Atlas Optimise/Atlas Optimise 02-min.png',
+          src: '/images/work/02. Atlas Optimise/Atlas Optimise 02-min.png',
           alt: 'Executive ROI dashboard',
-          caption: 'Executive summary view surfacing value metrics at a glance.',
+          caption: 'Executive summary view surfacing value metrics in plain language.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/Atlas Optimise/Atlas Optimise 03-min.png',
+          src: '/images/work/02. Atlas Optimise/Atlas Optimise 03-min.png',
           alt: 'B2B resource marketplace listing',
           caption: 'Marketplace listing with trust signals and SLA details.',
           aspectRatio: '16/9',
         },
         {
-          src: '/images/Cases/Atlas Optimise/Atlas Optimise 04-min.png',
-          alt: 'Capacity planning wizard',
-          caption: 'Step-by-step capacity-planning wizard producing an actionable plan.',
+          src: '/images/work/02. Atlas Optimise/Atlas Optimise 04-min.png',
+          alt: 'Role-based operator dashboard',
+          caption: 'Operator dashboard with full feature access distinct from the manager view.',
           aspectRatio: '16/9',
         },
       ],
@@ -484,27 +488,26 @@ export const caseStudies: CaseStudy[] = [
 
     results: {
       metrics: [
-        { label: 'Enterprise Retention', value: 51, suffix: '%', prefix: '+' },
-        { label: 'Platform Adoption', value: 67, suffix: '%', prefix: '+' },
-        { label: 'Resource Utilization', value: 43, suffix: '%', prefix: '+' },
+        { label: 'Enterprise Customer Retention', value: 31, prefix: '+', suffix: '%' },
+        { label: 'New Leads (B2B Marketplace)', value: 16, prefix: '+', suffix: '%' },
       ],
       testimonial: {
         quote:
-          'The executive dashboard changed how our C-suite perceives Atlas. We renewed three enterprise accounts that were at risk, and the marketplace is already generating revenue.',
-        author: 'James Whitfield',
-        role: 'Director of Enterprise Sales, Atlas',
+          "Rodrigo's user-centric approach was transformative. By rebalancing functionality for managers and operators through role-based dashboards and rapid prototyping, we didn't just simplify navigation, we operationalized scalability.",
+        author: 'Martin Kelman',
+        role: 'CDTO, ATS Global',
       },
       businessImpact:
-        'Enterprise retention improved by 51% year-over-year. The resource marketplace generated $240K in GMV in its first quarter, validating a new revenue stream for Atlas.',
+        'Enterprise customer retention increased by 31% within six months. The B2B Resource Marketplace launch generated 16% new leads, validating a new revenue stream for ATS Global.',
     },
 
     metaDescription:
-      'UX case study: Designing Atlas Optimise to improve enterprise retention by 51% and launch a B2B resource marketplace generating $240K GMV.',
-    keywords: ['UX case study', 'SaaS platform', 'resource management', 'B2B marketplace', 'enterprise retention'],
+      'UX case study: Designing Atlas Optimise® for ATS Global — role-based dashboards and a B2B marketplace that increased enterprise retention by 31%.',
+    keywords: ['UX case study', 'SaaS platform', 'resource management', 'B2B marketplace', 'enterprise retention', 'role-based design'],
   },
 ]
 
-// --- Existing helpers (unchanged) ---
+// --- Helpers ---
 
 export function getFeaturedCaseStudies(): CaseStudy[] {
   return caseStudies.filter((study) => study.featured)
@@ -517,8 +520,6 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
 export function getCaseStudiesByIndustry(industry: Industry): CaseStudy[] {
   return caseStudies.filter((study) => study.industry === industry)
 }
-
-// --- New helpers ---
 
 export function getAllIndustries(): Industry[] {
   // Returns deduplicated list of industries present in the data.

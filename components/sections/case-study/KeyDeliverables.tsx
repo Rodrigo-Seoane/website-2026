@@ -46,9 +46,9 @@ export function KeyDeliverables({ caseStudy }: KeyDeliverablesProps) {
           variants={fadeUp}
           className="flex gap-2 items-center mb-8"
         >
-          <div className="w-8 h-8">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 8h24M4 16h24M4 24h24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-content-active-primary" />
+          <div className="w-8 h-8 text-content-active-primary">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 8h24M4 16h24M4 24h24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </div>
           <h2 className="font-display font-bold text-[28px] leading-[1.1] text-content-active-primary">
@@ -69,7 +69,7 @@ export function KeyDeliverables({ caseStudy }: KeyDeliverablesProps) {
               <motion.div
                 key={index}
                 variants={fadeUp}
-                className="bg-surface-quaternary border border-content-disable-primary rounded-lg p-4 lg:p-6 flex gap-8"
+                className="bg-surface-quaternary border border-content-disable-primary rounded-lg p-4 lg:px-6 lg:py-9 flex gap-8"
               >
                 {/* Icon Container */}
                 <div className="bg-surface-primary rounded-lg flex items-center justify-center w-12 h-12 flex-shrink-0">
